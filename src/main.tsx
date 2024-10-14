@@ -1,14 +1,20 @@
 import { StrictMode } from "react";
 import ReactDOM from "react-dom/client";
 import { routeTree } from "./routeTree.gen";
-import { RouterProvider, createRouter } from "@tanstack/react-router";
+import {
+  RouterProvider,
+  createRouter,
+  createMemoryHistory,
+} from "@tanstack/react-router";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import "./index.css";
 
-// Create a new router instance
-const router = createRouter({ routeTree });
+const memoryHistory = createMemoryHistory({
+  initialEntries: ["/"],
+});
 
-// Register the router instance for type safety
+const router = createRouter({ routeTree, history: memoryHistory });
+
 declare module "@tanstack/react-router" {
   interface Register {
     router: typeof router;
