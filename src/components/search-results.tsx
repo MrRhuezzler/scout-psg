@@ -37,7 +37,7 @@ export function SearchResults() {
   return (
     <div className="min-h-screen bg-neutral-900 text-gray-100 p-4">
       <header className="flex justify-between items-center mb-6">
-        <h1 className="text-2xl font-bold">Search</h1>
+        <h1 className="text-2xl font-bold">Scout PSG</h1>
         <div className="flex items-center space-x-4">
           <Button variant="ghost" size="icon">
             <Settings className="h-5 w-5" />
